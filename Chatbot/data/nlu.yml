@@ -30,65 +30,33 @@ nlu:
     - bye bye
     - see you later
 
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+# Booking request
+- intent: request_init
+  examples:
+    - I want to book a room
+    - I would like to book a room
+    - can I book a room?
+    - can I make a reservation?
+    - I want to make a reservation.
 
-- intent: deny
+# Specyfing number of people
+- intent: number_people
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - [1](n_ppl) person
+    - [2](n_ppl) people
+    - [2](n_ppl) persons
+    - [3](n_ppl) people
+    - [3](n_ppl) persons
+    - [4](n_ppl) people
+    - [4](n_ppl) persons
 
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+# Confirmation
+intent: confirmation
+  examples:
+    - Yes, book it please.
+    - Yes, I confirm.
+    - I confirm
+    - yes pls
 
 - intent: entity_extraction
   examples: |

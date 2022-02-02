@@ -1,0 +1,11 @@
+user: Hi
+bot: Hello! How can I help you sir?
+
+user: I want to book a room.
+bot: OK. Can you specify number of people, please?
+
+user: 2 people.
+bot: OK. Your reservation is on a room with 2 beds. Please confirm you booking.
+
+user: I confirm.
+bot: The room is booked on tomorrow.
