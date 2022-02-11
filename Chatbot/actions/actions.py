@@ -7,26 +7,31 @@
 
 # This is a simple example for a custom action which utters "Hello World!"
 
-from typing import Any, Text, Dict, List
+# from typing import Any, Text, Dict, List
+#
+# from rasa_sdk import Action, Tracker
+# from rasa_sdk.executor import CollectingDispatcher
+# from rasa_sdk.forms import FormAction
 
-from rasa_sdk import Action, Tracker
-from rasa_sdk.executor import CollectingDispatcher
-
-
-class ActionConfirm(Action):
-
-    def name(self) -> Text:
-        return "action_confirm"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        service = tracker.get_slots('service')
-        p_count = tracker.get_slots('p_count')
-
-        print(service, p_count)
-
-        dispatcher.utter_message(text=f"Hello! You booked a {service} for {p_count} people. Please confirm your booking")
-
-        return []
+# class ActionBookingForm(FormAction):
+#
+#     def name(self) -> Text:
+#         return "action_guests_number"
+#
+#     @staticmethod
+#     def required_slots(tracker: "Tracker") -> List[text]:
+#         return ["n_ppl"]
+#
+#     def submit(
+#         self,
+#         dispatcher: "CollectingDispatcher",
+#         tracker: "Tracker",
+#         domain: "DomainDict",
+#     ) -> List[EventType]:
+#
+#         n_ppl = tracker.get_slot('n_ppl')
+#
+#         print(n_ppl)
+#
+#         dispatcher.utter_message(text = f"Splendid! You have a room booked for {n_ppl} people with breakfast. Payment method: credit card at reception. Can you confirm please?")
+#         return []

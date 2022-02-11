@@ -1,50 +1,100 @@
 version: "3.0"
-
-intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-
-entities:
-  - service
-  - p_count
-
-slots:
-  - service:
-    type: text
-    influnce_conversation: false
-  - p_count:
-    type: unfeaturized
-    influnce_conversation: false
-
-actions:
-  - action_confirm
-
-
-responses:
-  utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+
+intents:
+  - greet
+  - inform
+  - introduction
+  - confirmation
+
+entities:
+  - PERSON
+  - DATE
+  - n_ppl
+  - breakfast
+  - payment
+
+#Specify the slots that are defined in 'nlu' file
+slots:
+  PERSON:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: PERSON
+
+  DATE:
+    type: any
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: DATE
+
+  n_ppl:
+    type: float
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: n_ppl
+
+  breakfast:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: breakfast
+
+  payment:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: payment
+
+actions:
+  - utter_greet
+  - utter_confirmation
+  - utter_goodbye
+
+responses:
+  utter_greet:
+    - text: Hello and Welcome to the Heaven hotel reservation system. My name is Angel - chatbot that will take care of you reservation.
+            Can you please share you name and surname?
+
+  utter_ask_PERSON:
+    - text: Hello {PERSON}. Would you like to book a room?
+
+  utter_ask_DATE:
+    - text: Perfect. We are happy you have chosen our hotel. Can you specify the date you want the room to be available for you?
+            Please enter it in the following format; dd.mm.yy - dd.mm.yy.
+
+  utter_ask_n_ppl:
+    - text: Thank you. Can you specify number of guests, please?
+
+  utter_ask_breakfast:
+    - text: Would you like to order a stay with, or without breakfast?
+
+  utter_ask_payment:
+    - text: Will you pay through our online system right now or do you prefer to pay at the reception by cash/credit card?
+
+  utter_confirmation:
+    - text: Splendid! You have a room booked at {DATE} for {n_ppl} people {breakfast} breakfast. The room is booked for {PERSON}. Payment method; {payment}.
+            Can you confirm please?
+
+  utter_goodbye:
+    - text: Thank you. See you in Heaven!
+
+  utter_ask_continue:
+    - text: Do you want to continue?
+
+forms:
+  booking_form:
+    required_slots:
+      - PERSON
+      - DATE
+      - n_ppl
+      - breakfast
+      - payment

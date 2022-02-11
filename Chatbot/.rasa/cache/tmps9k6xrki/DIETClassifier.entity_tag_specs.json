@@ -1,0 +1,52 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-PERSON",
+      "2": "I-PERSON",
+      "3": "L-PERSON",
+      "4": "U-PERSON",
+      "5": "B-breakfast",
+      "6": "I-breakfast",
+      "7": "L-breakfast",
+      "8": "U-breakfast",
+      "9": "B-date",
+      "10": "I-date",
+      "11": "L-date",
+      "12": "U-date",
+      "13": "B-n_ppl",
+      "14": "I-n_ppl",
+      "15": "L-n_ppl",
+      "16": "U-n_ppl",
+      "17": "B-payment",
+      "18": "I-payment",
+      "19": "L-payment",
+      "20": "U-payment",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-PERSON": 1,
+      "I-PERSON": 2,
+      "L-PERSON": 3,
+      "U-PERSON": 4,
+      "B-breakfast": 5,
+      "I-breakfast": 6,
+      "L-breakfast": 7,
+      "U-breakfast": 8,
+      "B-date": 9,
+      "I-date": 10,
+      "L-date": 11,
+      "U-date": 12,
+      "B-n_ppl": 13,
+      "I-n_ppl": 14,
+      "L-n_ppl": 15,
+      "U-n_ppl": 16,
+      "B-payment": 17,
+      "I-payment": 18,
+      "L-payment": 19,
+      "U-payment": 20,
+      "O": 0
+    },
+    "num_tags": 21
+  }
+]

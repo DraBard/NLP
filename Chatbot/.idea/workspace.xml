@@ -3,10 +3,27 @@
   <component name="ChangeListManager">
     <list default="true" id="a7c92576-0310-4b43-911e-e2813b722f9a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.rasa/cache/cache.db" beforeDir="false" afterPath="$PROJECT_DIR$/.rasa/cache/cache.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flow" beforeDir="false" afterPath="$PROJECT_DIR$/Flow" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actions/actions.py" beforeDir="false" afterPath="$PROJECT_DIR$/actions/actions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/nlu.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data/nlu.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/rules.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data/rules.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/stories.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data/stories.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sentiment Analysis/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Sentiment Analysis/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sentiment Analysis/.idea/sentiment_analysis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Sentiment Analysis/.idea/sentiment_analysis.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain.yml" beforeDir="false" afterPath="$PROJECT_DIR$/domain.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/20220202-131424-sparse-bean.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/20220202-131926-overcast-bat.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/20220202-132554-trusting-pot.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/20220202-223049-paper-flue.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/TEDPolicy_confusion_matrix.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/TEDPolicy_report.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/failed_test_stories.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/intent_confusion_matrix.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/intent_histogram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/intent_report.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/stories_with_warnings.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/story_confusion_matrix.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/story_report.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +32,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -44,5 +69,16 @@
       <updated>1643803660951</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -3,45 +3,38 @@ version: "3.0"
 nlu:
 - intent: greet
   examples: |
-    - hey
-    - hello
     - hi
-    - hello there
+    - hello
     - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
 
-- intent: goodbye
+- intent: introduction
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+    - [Tom](PERSON)
+    - hey, I am [Tom](PERSON)
+    - hello, I am [Tom](PERSON)
+    - hi, I am [Tom](PERSON)
+    - hello there, I am [Tom](PERSON)
+    - good morning, I am [Tom](PERSON)
+    - good evening, I am [Tom(PERSON)
+    - moin, I am [Tom](PERSON)
+    - hey there, I am [Tom](PERSON)
+    - let's go, I am [Tom](PERSON)
+    - hey dude, I am [Tom](PERSON)
+    - goodmorning, I am [Tom](PERSON)
+    - goodevening, I am [Tom](PERSON)
+    - good afternoon, I am [Tom](PERSON)
 
-# Booking request
-- intent: request_init
-  examples:
-    - I want to book a room
-    - I would like to book a room
-    - can I book a room?
-    - can I make a reservation?
-    - I want to make a reservation.
-
-# Specyfing number of people
-- intent: number_people
+- intent: inform
   examples: |
+    - Yes I want to book a room
+    - Yes I would like to book a room
+    - Yes I want to make a reservation
+    - Yes please  
+    - yes
+    - [22.06.22 - 25.06.22](DATE)
+    - [22.06.2022 - 25.06.2022](DATE)
+    - [22.06.22-25.06.22](DATE)
+    - [22/06/22 - 25.06.22](DATE)
     - [1](n_ppl) person
     - [2](n_ppl) people
     - [2](n_ppl) persons
@@ -49,16 +42,23 @@ nlu:
     - [3](n_ppl) persons
     - [4](n_ppl) people
     - [4](n_ppl) persons
+    - [one](n_ppl) guest
+    - [two](n_ppl) guests
+    - [three](n_ppl) guests
+    - [four](n_ppl) guests
+    - [five](n_ppl) guests
+    - [with](breakfast) breakfast
+    - [without](breakfast) breakfast
+    - [online](payment) system
+    - by [card](payment) at reception
+    - [cash](payment)  at reception
 
 # Confirmation
-intent: confirmation
-  examples:
-    - Yes, book it please.
-    - Yes, I confirm.
+- intent: confirmation
+  examples: |
+    - Yes book it please.
+    - Yes I confirm.
     - I confirm
     - yes pls
-
-- intent: entity_extraction
-  examples: |
-    - I want to book a [room](service) for [3](p_count) people
-    - book a [room](service) for [9](p_count) people
+    - yes
+    - confirm
