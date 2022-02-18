@@ -1,0 +1,41 @@
+# Configuration for Rasa NLU.
+# https://rasa.com/docs/rasa/nlu/components/
+language: en  # your two-letter language code
+
+pipeline:
+  - name: SpacyNLP
+    model: "en_core_web_sm"
+  - name: SpacyTokenizer
+  - name: SpacyFeaturizer
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: "char_wb"
+    min_ngram: 1
+    max_ngram: 4
+  - name: SpacyEntityExtractor
+    dimensions: ["PERSON"]
+#  - name: DucklingEntityExtractor
+#    url: http://localhost:8000
+#    dimensions: ["DATE", "number"]
+  - name: DIETClassifier
+    epochs: 100
+  - name: EntitySynonymMapper
+  - name: ResponseSelector
+    epochs: 100
+
+entities:
+  - PERSON
+  - DATE
+  - n_ppl
+  - breakfast
+  - payment
+
+policies:
+# # No configuration for policies was provided. The following default policies were used to train your model.
+# # If you'd like to customize them, uncomment and adjust the policies.
+# # See https://rasa.com/docs/rasa/policies for more information.
+  - name: RulePolicy
+  - name: TEDPolicy
+    epochs: 100

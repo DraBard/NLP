@@ -1,0 +1,61 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hi
+    - hello
+    - good morning
+- intent: introduction
+  examples: |
+    - [Tom](PERSON)
+    - hey I am [Tom](PERSON)
+    - hello I am [Tom](PERSON)
+    - hi I am [Tom](PERSON)
+    - hello there I am [Tom](PERSON)
+    - good morning I am [Tom](PERSON)
+    - good evening I am [Tom(PERSON)
+    - moin I am [Tom](PERSON)
+    - hey there I am [Tom](PERSON)
+    - let's go, I am [Tom](PERSON)
+    - hey dude I am [Tom](PERSON)
+    - goodmorning I am [Tom](PERSON)
+    - goodevening I am [Tom](PERSON)
+    - good afternoon I am [Tom](PERSON)
+- intent: inform
+  examples: |
+    - Yes I want to book a room
+    - Yes I would like to book a room
+    - Yes I want to make a reservation
+    - Yes please  
+    - yes
+    - [22.06.22 - 25.06.22](DATE)
+    - [22.06.2022 - 25.06.2022](DATE)
+    - [22.06.22-25.06.22](DATE)
+    - [22/06/22 - 25.06.22](DATE)
+    - [1](n_ppl) person
+    - [2](n_ppl) people
+    - [2](n_ppl) persons
+    - [3](n_ppl) people
+    - [3](n_ppl) persons
+    - [4](n_ppl) people
+    - [4](n_ppl) persons
+    - [one](n_ppl) guest
+    - [two](n_ppl) guests
+    - [three](n_ppl) guests
+    - [four](n_ppl) guests
+    - [five](n_ppl) guests
+    - [with](breakfast) breakfast
+    - [without](breakfast) breakfast
+    - [online](payment) system
+    - by [card](payment) at reception
+    - [cash](payment)  at reception
+# Confirmation
+- intent: confirmation
+  examples: |
+    - Yes book it please.
+    - Yes I confirm.
+    - I confirm
+    - yes pls
+    - yes
+    - confirm

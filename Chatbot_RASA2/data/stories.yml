@@ -1,0 +1,19 @@
+version: "2.0"
+
+stories:
+
+- story: booking
+  steps:
+
+    - intent: greet
+    - action: utter_greet
+
+    - intent: introduction
+    - action: booking_form
+    - active_loop: booking_form
+    - active_loop: null
+
+    - action: utter_confirmation
+
+    - intent: confirmation
+    - action: utter_goodbye
