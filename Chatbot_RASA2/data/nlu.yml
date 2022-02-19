@@ -22,13 +22,17 @@ nlu:
     - goodmorning I am [Tom](PERSON)
     - goodevening I am [Tom](PERSON)
     - good afternoon I am [Tom](PERSON)
-- intent: inform
+
+- intent: booking_request
   examples: |
     - Yes I want to book a room
     - Yes I would like to book a room
     - Yes I want to make a reservation
     - Yes please  
     - yes
+
+- intent: inform
+  examples: |
     - [22.06.22 - 25.06.22](DATE)
     - [22.06.2022 - 25.06.2022](DATE)
     - [22.06.22-25.06.22](DATE)

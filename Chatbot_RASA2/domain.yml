@@ -2,93 +2,74 @@ version: '2.0'
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
 intents:
-  - greet
-  - inform
-  - introduction
-  - confirmation
-
+- booking_request
+- confirmation
+- greet
+- inform
+- introduction
 entities:
-  - PERSON
-  - DATE
-  - n_ppl
-  - breakfast
-  - payment
-
-#Specify the slots that are defined in 'nlu' file
+- PERSON
+- DATE
+- n_ppl
+- breakfast
+- payment
 slots:
   PERSON:
     type: text
     influence_conversation: false
-
   DATE:
     type: any
     influence_conversation: false
-
   n_ppl:
     type: float
     influence_conversation: false
-
+    max_value: 1.0
+    min_value: 0.0
   breakfast:
     type: text
     influence_conversation: false
-
   payment:
     type: text
     influence_conversation: false
-
-actions:
-  - utter_greet
-  - utter_confirmation
-  - utter_goodbye
-
 responses:
   utter_greet:
-    - text: Hello and Welcome to the Heaven hotel reservation system. My name is Angel - chatbot that will take care of you reservation.
-            Can you please share you name and surname?
-
-  utter_ask_PERSON:
-    - text: Hello {PERSON}. Would you like to book a room?
-
+  - text: Hello and Welcome to the Heaven hotel reservation system. My name is Angel - chatbot that will take care of you reservation. Can you please share you name and surname?
+  utter_PERSON:
+  - text: Hello {PERSON}. Would you like to book a room?
   utter_ask_DATE:
-    - text: Perfect. We are happy you have chosen our hotel. Can you specify the date you want the room to be available for you?
-            Please enter it in the following format; dd.mm.yy - dd.mm.yy.
-
+  - text: Perfect. We are happy you have chosen our hotel. Can you specify the date you want the room to be available for you? Please enter it in the following format; dd.mm.yy - dd.mm.yy.
   utter_ask_n_ppl:
-    - text: Thank you. Can you specify number of guests, please?
-
+  - text: Thank you. Can you specify number of guests, please?
   utter_ask_breakfast:
-    - text: Would you like to order a stay with, or without breakfast?
-
+  - text: Would you like to order a stay with, or without breakfast?
   utter_ask_payment:
-    - text: Will you pay through our online system right now or do you prefer to pay at the reception by cash/credit card?
-
+  - text: Will you pay through our online system right now or do you prefer to pay at the reception by cash/credit card?
   utter_confirmation:
-    - text: Splendid! You have a room booked at {DATE} for {n_ppl} people {breakfast} breakfast. The room is booked for {PERSON}. Payment method; {payment}.
-            Can you confirm please?
-
+  - text: Splendid! You have a room booked at {DATE} for {n_ppl} people {breakfast} breakfast. The room is booked for {PERSON}. Payment method; {payment}. Can you confirm please?
   utter_goodbye:
-    - text: Thank you. See you in Heaven!
-
+  - text: Thank you. See you in Heaven!
   utter_ask_continue:
-    - text: Do you want to continue?
-
+  - text: Do you want to continue?
+actions:
+- utter_greet
+- utter_confirmation
+- utter_goodbye
 forms:
   booking_form:
     required_slots:
       PERSON:
-        - type: from_entity
-          entity: PERSON
+      - type: from_entity
+        entity: PERSON
       DATE:
-        - type: from_entity
-          entity: DATE
+      - type: from_entity
+        entity: DATE
       n_ppl:
-        - type: from_entity
-          entity: n_ppl
+      - type: from_entity
+        entity: n_ppl
       breakfast:
-        - type: from_entity
-          entity: breakfast
+      - type: from_entity
+        entity: breakfast
       payment:
-        - type: from_entity
-          entity: payment
+      - type: from_entity
+        entity: payment

@@ -7,8 +7,9 @@ stories:
 
     - intent: greet
     - action: utter_greet
-
     - intent: introduction
+    - action: utter_PERSON
+    - intent: booking_request
     - action: booking_form
     - active_loop: booking_form
     - active_loop: null
