@@ -1,21 +1,19 @@
 version: "3.0"
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
-
 
 intents:
-  - greet
-  - inform
-  - introduction
-  - confirmation
+- booking_request
+- confirmation
+- greet
+- inform
+- introduction
+- denial
 
 entities:
-  - PERSON
-  - DATE
-  - n_ppl
-  - breakfast
-  - payment
+- PERSON
+- DATE
+- n_ppl
+- breakfast
+- payment
 
 #Specify the slots that are defined in 'nlu' file
 slots:
@@ -57,18 +55,22 @@ slots:
 actions:
   - utter_greet
   - utter_confirmation
+  - utter_PERSON
   - utter_goodbye
+  - utter_rephrase
 
 responses:
   utter_greet:
-    - text: Hello and Welcome to the Heaven hotel reservation system. My name is Angel - chatbot that will take care of you reservation.
-            Can you please share you name and surname?
+    - text: Hello and Welcome to the Heaven hotel reservation system. 
+            My name is Angel - chatbot that will take care of you reservation.
+            Can you share you name, please?
 
-  utter_ask_PERSON:
-    - text: Hello {PERSON}. Would you like to book a room?
+  utter_PERSON:
+    - text: Hello {PERSON}. How can I help you?
 
   utter_ask_DATE:
-    - text: Perfect. We are happy you have chosen our hotel. Can you specify the date you want the room to be available for you?
+    - text: Perfect. We are happy you have chosen our hotel. 
+            Can you specify the date you want the room to be available for you?
             Please enter it in the following format; dd.mm.yy - dd.mm.yy.
 
   utter_ask_n_ppl:
@@ -78,23 +80,28 @@ responses:
     - text: Would you like to order a stay with, or without breakfast?
 
   utter_ask_payment:
-    - text: Will you pay through our online system right now or do you prefer to pay at the reception by cash/credit card?
+    - text: Will you pay through our online system right now or do you prefer to pay at the reception?
 
   utter_confirmation:
-    - text: Splendid! You have a room booked at {DATE} for {n_ppl} people {breakfast} breakfast. The room is booked for {PERSON}. Payment method; {payment}.
+    - text: Splendid! You have a room booked at {DATE} for {n_ppl} people {breakfast} breakfast. The room is booked for {PERSON}. Payment - {payment}.
             Can you confirm please?
 
   utter_goodbye:
     - text: Thank you. See you in Heaven!
 
-  utter_ask_continue:
-    - text: Do you want to continue?
+  utter_rephrase:
+  - text: Sorry I didn't get that. Can you rephrase?
+
 
 forms:
   booking_form:
     required_slots:
-      - PERSON
       - DATE
       - n_ppl
       - breakfast
       - payment
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,21 @@
+rasax:
+  initialUser: "bard"
+      password: "rasa2"
+  passwordSalt: "rasa2"
+  token: "rasa2"
+  jwtSecret: "rasa2"
+  tag: "1.0.1"
+
+rasa:
+  token: "rasa2"
+  tag: "2.8.25-full"
+
+rabbitmq:
+  rabbitmq:
+    password: "rasa2"
+
+global:
+  postgresql:
+    postgresqlPassword: "rasa2"
+  redis:
+    password: "rasa2"

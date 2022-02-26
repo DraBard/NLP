@@ -6,6 +6,7 @@ nlu:
     - hi
     - hello
     - good morning
+
 - intent: introduction
   examples: |
     - [Tom](PERSON)
@@ -54,6 +55,7 @@ nlu:
     - [online](payment) system
     - by [card](payment) at reception
     - [cash](payment)  at reception
+
 # Confirmation
 - intent: confirmation
   examples: |

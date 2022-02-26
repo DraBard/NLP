@@ -10,27 +10,28 @@ nlu:
 - intent: introduction
   examples: |
     - [Tom](PERSON)
-    - hey, I am [Tom](PERSON)
-    - hello, I am [Tom](PERSON)
-    - hi, I am [Tom](PERSON)
-    - hello there, I am [Tom](PERSON)
-    - good morning, I am [Tom](PERSON)
-    - good evening, I am [Tom(PERSON)
-    - moin, I am [Tom](PERSON)
-    - hey there, I am [Tom](PERSON)
+    - I am [Tom](PERSON)
+    - hey I am [Tom](PERSON)
+    - hello I am [Tom](PERSON)
+    - hi I am [Tom](PERSON)
+    - hello there I am [Tom](PERSON)
+    - good morning I am [Tom](PERSON)
+    - good evening I am [Tom](PERSON)
+    - moin I am [Tom](PERSON)
+    - hey there I am [Tom](PERSON)
     - let's go, I am [Tom](PERSON)
-    - hey dude, I am [Tom](PERSON)
-    - goodmorning, I am [Tom](PERSON)
-    - goodevening, I am [Tom](PERSON)
-    - good afternoon, I am [Tom](PERSON)
+    - hey dude I am [Tom](PERSON)
+    - goodmorning I am [Tom](PERSON)
+    - goodevening I am [Tom](PERSON)
+    - good afternoon I am [Tom](PERSON)
+
+- intent: booking_request
+  examples: |
+    - I would like to book a room
+    - Can I book a room please
 
 - intent: inform
   examples: |
-    - Yes I want to book a room
-    - Yes I would like to book a room
-    - Yes I want to make a reservation
-    - Yes please  
-    - yes
     - [22.06.22 - 25.06.22](DATE)
     - [22.06.2022 - 25.06.2022](DATE)
     - [22.06.22-25.06.22](DATE)
@@ -50,15 +51,26 @@ nlu:
     - [with](breakfast) breakfast
     - [without](breakfast) breakfast
     - [online](payment) system
-    - by [card](payment) at reception
-    - [cash](payment)  at reception
+    - right now [online](payment)
+    - by card [at reception](payment)
+    - cash [at reception](payment)
+    - [at reception](payment)
 
-# Confirmation
 - intent: confirmation
   examples: |
-    - Yes book it please.
-    - Yes I confirm.
+    - yes
     - I confirm
     - yes pls
-    - yes
-    - confirm
+    - I can
+
+- intent: denial
+  examples: |
+    - no
+    - no i dont
+    - i dont confirm
+    - negative
+    - the data is incorrect
+    - incorrect
+    - it is not good
+    - deny
+    - denied

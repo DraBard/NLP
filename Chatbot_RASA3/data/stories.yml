@@ -2,18 +2,62 @@ version: "3.0"
 
 stories:
 
-- story: booking
+- story: booking_confirmed
   steps:
 
     - intent: greet
     - action: utter_greet
-
     - intent: introduction
+      entities:
+        - PERSON
+    - action: utter_PERSON
+    - intent: booking_request
     - action: booking_form
     - active_loop: booking_form
+    - slot_was_set:
+      - requested_slot: DATE
+    - slot_was_set:
+      - requested_slot: n_ppl
+    - slot_was_set:
+      - requested_slot: breakfast
+    - slot_was_set:
+      - requested_slot: payment
     - active_loop: null
-
     - action: utter_confirmation
-
     - intent: confirmation
     - action: utter_goodbye
+
+
+- story: booking_denied
+  steps:
+
+    - intent: greet
+    - action: utter_greet
+    - intent: introduction
+      entities:
+        - PERSON
+    - action: utter_PERSON
+    - intent: booking_request
+    - action: booking_form
+    - active_loop: booking_form
+    - slot_was_set:
+      - requested_slot: DATE
+    - slot_was_set:
+      - requested_slot: n_ppl
+    - slot_was_set:
+      - requested_slot: breakfast
+    - slot_was_set:
+      - requested_slot: payment
+    - active_loop: null
+    - action: utter_confirmation
+    - intent: denial
+    - action: booking_form
+    - active_loop: booking_form
+    - slot_was_set:
+      - requested_slot: DATE
+    - slot_was_set:
+      - requested_slot: n_ppl
+    - slot_was_set:
+      - requested_slot: breakfast
+    - slot_was_set:
+      - requested_slot: payment

@@ -1,14 +1,15 @@
 # Configuration for Rasa NLU.
 # https://rasa.com/docs/rasa/nlu/components/
-language: en  # your two-letter language code
+language: en # your two-letter language code
 
 pipeline:
   - name: SpacyNLP
-    model: "en_core_web_sm"
+    model: en_core_web_sm
   - name: SpacyTokenizer
   - name: SpacyFeaturizer
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
   - name: CountVectorsFeaturizer
   - name: CountVectorsFeaturizer
     analyzer: "char_wb"
@@ -16,9 +17,6 @@ pipeline:
     max_ngram: 4
   - name: SpacyEntityExtractor
     dimensions: ["PERSON"]
-#  - name: DucklingEntityExtractor
-#    url: http://localhost:5005
-#    dimensions: ["DATE", "number"]
   - name: DIETClassifier
     epochs: 100
   - name: EntitySynonymMapper
