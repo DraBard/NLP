@@ -30,12 +30,6 @@ rules:
       - intent: confirmation
       - action: utter_goodbye
 
-  - rule: activate booking_form
-    steps:
-      - intent: denial
-      - action: booking_form              # run the form
-      - active_loop: booking_form
-
     #   Ask the user to rephrase whenever they send a message with low NLU confidence
   - rule: rephrase
     steps:

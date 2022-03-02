@@ -3,26 +3,12 @@
 # from rasa_sdk import Action, Tracker
 # from rasa_core_sdk.events import Restarted
 # from rasa_sdk.executor import CollectingDispatcher
+# from rasa_sdk.events import AllSlotsReset
 #
 #
-# class ActionDenial(Action):
+# class ActionEnd(Action):
+#     def name(self):
+#         return "action_reset_all_slots"
 #
-#     def name(self) -> Text:
-#         return "action_denial"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#
-#         return [Restarted()]
-#
-# class ActionRestart(Action):
-#
-#   def name(self) -> Text:
-#       return "action_restart"
-#
-#   def run(self, dispatcher, tracker, domain):
-#       # do something here
-#
-#       return []
+#     def run(self, dispatcher, tracker, domain):
+#         return [AllSlotsReset()]
