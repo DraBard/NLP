@@ -8,6 +8,7 @@ import time
 # hyperparameters
 batch_size = 32 # how many independent sequences will we process in parallel?
 block_size = 8 # what is the maximum context length for predictions?
+n_embd = 32 # how many numbers in the vector representing each token?
 max_iters = 3000
 eval_interval = 300
 learning_rate = 1e-2
@@ -64,15 +65,21 @@ def estimate_loss():
 # super simple bigram model
 class BigramLanguageModel(nn.Module):
 
-    def __init__(self, vocab_size):
+    def __init__(self):
         super().__init__()
         # each token directly reads off the logits for the next token from a lookup table
-        self.token_embedding_table = nn.Embedding(vocab_size, vocab_size)
+        self.token_embedding_table = nn.Embedding(vocab_size, n_embd)
+        self.position_embedding_table = nn.Embedding(block_size, n_embd)
+        self.lm_head = nn.Linear(n_embd, vocab_size)
+
 
     def forward(self, idx, targets=None):
-
+        B, T = idx.shape
         # idx and targets are both (B,T) tensor of integers
-        logits = self.token_embedding_table(idx) # (B,T,C)
+        token_embd = self.token_embedding_table(idx) # (B,T,C)
+        pos_embd = self.position_embedding_table(torch.arange(T, device=device)) # (T,C)
+        x = token_embd + pos_embd
+        logits = self.lm_head(x) # (B,T,vocab_size)
 
         if targets is None:
             loss = None
